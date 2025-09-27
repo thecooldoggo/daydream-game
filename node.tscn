@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://cs3n70fd4jfqb"]
+[gd_scene load_steps=26 format=4 uid="uid://cs3n70fd4jfqb"]
 
 [ext_resource type="Script" uid="uid://d1xkk8gn2ow74" path="res://player.gd" id="1_112p8"]
 [ext_resource type="Texture2D" uid="uid://drfnpxqc82njh" path="res://pixil-frame-0.png" id="2_qn3nj"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://qvndbxaxcjrt" path="res://walk-frame-5.png" id="12_oaeeq"]
 [ext_resource type="FontFile" uid="uid://b4lso6fh26ttt" path="res://PixelifySans-VariableFont_wght.ttf" id="16_feppd"]
 [ext_resource type="Script" uid="uid://blcjixsaqsem0" path="res://label1.gd" id="17_aeaoo"]
+[ext_resource type="Texture2D" uid="uid://cpqxfqib7fgpe" path="res://flower-droop-frame-1.png" id="18_sps8e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tda05"]
 size = Vector2(76.5, 101.75)
@@ -1286,13 +1287,14 @@ offset_bottom = 204552.0
 pivot_offset = Vector2(-4702, -72)
 theme_override_fonts/font = ExtResource("16_feppd")
 theme_override_font_sizes/font_size = 51
-text = "You find youself in a weird place..."
+text = "There must be a way to save it...
+"
 
 [node name="Label4" type="Label" parent="."]
-offset_left = 5700.0
-offset_top = 204348.0
-offset_right = 6619.0
-offset_bottom = 204446.0
+offset_left = 5697.0
+offset_top = 204401.0
+offset_right = 6616.0
+offset_bottom = 204499.0
 pivot_offset = Vector2(-4702, -72)
 theme_override_fonts/font = ExtResource("16_feppd")
 theme_override_font_sizes/font_size = 51
@@ -1312,6 +1314,11 @@ position = Vector2(8588, 0)
 position = Vector2(-1619, 131792.5)
 scale = Vector2(24.985, 16.695)
 shape = SubResource("RectangleShape2D_aeaoo")
+
+[node name="FlowerDroopFrame1" type="Sprite2D" parent="."]
+position = Vector2(6556, 204479)
+scale = Vector2(4.171875, 4.140625)
+texture = ExtResource("18_sps8e")
 
 [connection signal="body_entered" from="Area2D" to="CanvasLayer/Label15" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="CanvasLayer/Label15" method="_on_area_2d_body_exited"]
