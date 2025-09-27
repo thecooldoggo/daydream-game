@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bfnnaee8f0xly" path="res://walk-frame-4.png" id="11_bnlop"]
 [ext_resource type="Texture2D" uid="uid://qvndbxaxcjrt" path="res://walk-frame-5.png" id="12_oaeeq"]
 [ext_resource type="FontFile" uid="uid://b4lso6fh26ttt" path="res://PixelifySans-VariableFont_wght.ttf" id="16_feppd"]
-[ext_resource type="Script" uid="uid://blcjixsaqsem0" path="res://label1.gd" id="17_aeaoo"]
+[ext_resource type="Script" path="res://label1.gd" id="17_aeaoo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tda05"]
 size = Vector2(76.5, 101.75)
