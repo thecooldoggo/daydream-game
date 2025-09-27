@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://btdn5rjwfidqy"]
+
+[ext_resource type="Script" uid="uid://dqbnipxk2d48u" path="res://panel.gd" id="1_y26ic"]
+
+[node name="Panel" type="Panel"]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_y26ic")
