@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://cs3n70fd4jfqb"]
+[gd_scene load_steps=22 format=4 uid="uid://cs3n70fd4jfqb"]
 
 [ext_resource type="Script" uid="uid://d1xkk8gn2ow74" path="res://player.gd" id="1_112p8"]
 [ext_resource type="Texture2D" uid="uid://drfnpxqc82njh" path="res://pixil-frame-0.png" id="2_qn3nj"]
@@ -15,12 +15,24 @@
 [ext_resource type="Texture2D" uid="uid://dms7u4v0tgd2b" path="res://walk-frame-3.png" id="10_sps8e"]
 [ext_resource type="Texture2D" uid="uid://bfnnaee8f0xly" path="res://walk-frame-4.png" id="11_bnlop"]
 [ext_resource type="Texture2D" uid="uid://qvndbxaxcjrt" path="res://walk-frame-5.png" id="12_oaeeq"]
+[ext_resource type="FontFile" uid="uid://b4lso6fh26ttt" path="res://PixelifySans-VariableFont_wght.ttf" id="16_feppd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tda05"]
-size = Vector2(101.5, 103.75)
+size = Vector2(76.5, 101.75)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wt6go"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_aeaoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sps8e")
+}],
+"loop": true,
+"name": &"JumpAni",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_qn3nj")
@@ -62,7 +74,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"walkAnimation",
-"speed": 5.0
+"speed": 13.0
 }]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qn3nj"]
@@ -1193,15 +1205,15 @@ position_smoothing_enabled = true
 position_smoothing_speed = 6.0
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
-position = Vector2(-11.25, 9.875)
+position = Vector2(1.25, 10.875)
 shape = SubResource("RectangleShape2D_tda05")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+z_index = 2
 position = Vector2(-4, 9.999999)
 scale = Vector2(3.6562502, 3.84375)
 sprite_frames = SubResource("SpriteFrames_wt6go")
 animation = &"walkAnimation"
-frame_progress = 0.37206578
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-3, -0.5)
@@ -1219,3 +1231,14 @@ z_index = -15
 position = Vector2(1068.3201, 1028.9999)
 scale = Vector2(1.017513, 1.0605346)
 texture = ExtResource("9_r657h")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 13.0
+offset_top = 8.0
+offset_right = 124.0
+offset_bottom = 53.0
+theme_override_fonts/font = ExtResource("16_feppd")
+theme_override_font_sizes/font_size = 36
+text = "Score:"
