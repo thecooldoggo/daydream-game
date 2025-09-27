@@ -5,7 +5,7 @@ const JUMP_VELOCITY = -600.0
 var IS_MOVING = false
 var flower_enter_1 = false
 var FLOWER_DONE = false
-
+@onready var final_image = $"../CanvasLayer/EndgameOasisPixilFrame0"
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var animated_flower = $"../FlowerSprite"
 func _ready() -> void:
@@ -55,5 +55,6 @@ func _flower_enter(body: Node2D) -> void:
 
 
 func _on_finalgame_body_entered(body: Node2D) -> void:
-	if FLOWER_DONE is true:
-	
+	if FLOWER_DONE:
+		final_image.visible = true
+		get_tree().paused = true
