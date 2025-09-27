@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=4 uid="uid://cs3n70fd4jfqb"]
+[gd_scene load_steps=8 format=4 uid="uid://cs3n70fd4jfqb"]
 
-[ext_resource type="Script" uid="uid://d1xkk8gn2ow74" path="res://player.gd" id="1_112p8"]
-[ext_resource type="Texture2D" uid="uid://bp7ctgoayrfco" path="res://icon.svg" id="2_e2u21"]
+[ext_resource type="Script" path="res://player.gd" id="1_112p8"]
+[ext_resource type="Texture2D" uid="uid://dvvvqqh0jja8x" path="res://pixil-layer-Layer 2.png" id="2_112p8"]
 [ext_resource type="Texture2D" uid="uid://81kt76hyoyvd" path="res://images.png" id="3_bss38"]
+[ext_resource type="Texture2D" uid="uid://b47qk3qb30org" path="res://pixil-layer-Layer 3.png" id="3_e2u21"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tda05"]
 size = Vector2(120, 121)
@@ -416,11 +417,17 @@ position_smoothing_enabled = true
 position_smoothing_speed = 6.0
 
 [node name="Sprite2D2" type="Sprite2D" parent="Player"]
-position = Vector2(-2, 0)
-texture = ExtResource("2_e2u21")
+position = Vector2(-4, 9.999999)
+scale = Vector2(3.6562502, 3.84375)
+texture = ExtResource("2_112p8")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Player/Sprite2D2"]
+position = Vector2(-0.82051086, 0)
+scale = Vector2(0.9999999, 0.9674796)
+texture = ExtResource("3_e2u21")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
-position = Vector2(-3, -1)
+position = Vector2(-5, 1)
 shape = SubResource("RectangleShape2D_tda05")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
