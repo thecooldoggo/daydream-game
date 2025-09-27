@@ -4,11 +4,14 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -600.0
 var IS_MOVING = false
 var flower_enter_1 = false
+var FLOWER_DONE = false
 
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var animated_flower = $"../FlowerSprite"
+func _ready() -> void:
+	animated_flower.play("dead")
 
 func _physics_process(delta: float) -> void:
-	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		IS_MOVING = true
@@ -18,8 +21,8 @@ func _physics_process(delta: float) -> void:
 		# player change animaion
 		animated_sprite.play("personWithFlower")
 		# change flower to blooming
-		
-		#
+		animated_flower.play("alive")
+		FLOWER_DONE = true
 
 	if Input.is_action_just_pressed("up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -49,3 +52,8 @@ func _physics_process(delta: float) -> void:
 
 func _flower_enter(body: Node2D) -> void:
 	flower_enter_1 = true
+
+
+func _on_finalgame_body_entered(body: Node2D) -> void:
+	if FLOWER_DONE is true:
+	
