@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=4 uid="uid://cs3n70fd4jfqb"]
 
-[ext_resource type="Script" path="res://player.gd" id="1_112p8"]
+[ext_resource type="Script" uid="uid://d1xkk8gn2ow74" path="res://player.gd" id="1_112p8"]
 [ext_resource type="Texture2D" uid="uid://dvvvqqh0jja8x" path="res://pixil-layer-Layer 2.png" id="2_112p8"]
 [ext_resource type="Texture2D" uid="uid://81kt76hyoyvd" path="res://images.png" id="3_bss38"]
 [ext_resource type="Texture2D" uid="uid://b47qk3qb30org" path="res://pixil-layer-Layer 3.png" id="3_e2u21"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tda05"]
-size = Vector2(120, 121)
+size = Vector2(101.5, 103.75)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qn3nj"]
 texture = ExtResource("3_bss38")
@@ -416,6 +416,12 @@ script = ExtResource("1_112p8")
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0
 
+[node name="ColorRect" type="ColorRect" parent="Player/Camera2D2"]
+z_index = -15
+offset_right = 1158.0
+offset_bottom = 652.0
+color = Color(0.6996299, 0.8402951, 1, 1)
+
 [node name="Sprite2D2" type="Sprite2D" parent="Player"]
 position = Vector2(-4, 9.999999)
 scale = Vector2(3.6562502, 3.84375)
@@ -427,7 +433,7 @@ scale = Vector2(0.9999999, 0.9674796)
 texture = ExtResource("3_e2u21")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
-position = Vector2(-5, 1)
+position = Vector2(-11.25, 9.875)
 shape = SubResource("RectangleShape2D_tda05")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
