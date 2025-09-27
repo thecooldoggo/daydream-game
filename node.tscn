@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://cs3n70fd4jfqb"]
+[gd_scene load_steps=25 format=4 uid="uid://cs3n70fd4jfqb"]
 
 [ext_resource type="Script" uid="uid://d1xkk8gn2ow74" path="res://player.gd" id="1_112p8"]
 [ext_resource type="Texture2D" uid="uid://drfnpxqc82njh" path="res://pixil-frame-0.png" id="2_qn3nj"]
@@ -16,7 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bfnnaee8f0xly" path="res://walk-frame-4.png" id="11_bnlop"]
 [ext_resource type="Texture2D" uid="uid://qvndbxaxcjrt" path="res://walk-frame-5.png" id="12_oaeeq"]
 [ext_resource type="FontFile" uid="uid://b4lso6fh26ttt" path="res://PixelifySans-VariableFont_wght.ttf" id="16_feppd"]
-[ext_resource type="Script" path="res://label1.gd" id="17_aeaoo"]
+[ext_resource type="Script" uid="uid://blcjixsaqsem0" path="res://label1.gd" id="17_aeaoo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tda05"]
 size = Vector2(76.5, 101.75)
@@ -1194,6 +1194,9 @@ sources/1 = SubResource("TileSetAtlasSource_r657h")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_feppd"]
 size = Vector2(1887.0625, 371.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aeaoo"]
+size = Vector2(373.80432, 8213.058)
+
 [node name="Node" type="Node"]
 
 [node name="Player" type="CharacterBody2D" parent="."]
@@ -1245,6 +1248,18 @@ text = "Welcome to the slums...
 "
 script = ExtResource("17_aeaoo")
 
+[node name="Label16" type="Label" parent="CanvasLayer"]
+visible = false
+offset_left = 336.0
+offset_top = 285.0
+offset_right = 812.0
+offset_bottom = 448.0
+theme_override_fonts/font = ExtResource("16_feppd")
+theme_override_font_sizes/font_size = 66
+text = "Concrete Seed
+"
+script = ExtResource("17_aeaoo")
+
 [node name="Label" type="Label" parent="."]
 offset_left = -335.0
 offset_top = -134.0
@@ -1264,9 +1279,9 @@ theme_override_font_sizes/font_size = 51
 text = "Wait..."
 
 [node name="Label3" type="Label" parent="."]
-offset_left = 3510.0
+offset_left = 3869.0
 offset_top = 204454.0
-offset_right = 4351.0
+offset_right = 4710.0
 offset_bottom = 204552.0
 pivot_offset = Vector2(-4702, -72)
 theme_override_fonts/font = ExtResource("16_feppd")
@@ -1290,5 +1305,15 @@ position = Vector2(4294, 0)
 position = Vector2(-2806.4688, -199)
 shape = SubResource("RectangleShape2D_feppd")
 
+[node name="Area2Popup" type="Area2D" parent="."]
+position = Vector2(8588, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2Popup"]
+position = Vector2(-1619, 131792.5)
+scale = Vector2(24.985, 16.695)
+shape = SubResource("RectangleShape2D_aeaoo")
+
 [connection signal="body_entered" from="Area2D" to="CanvasLayer/Label15" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="CanvasLayer/Label15" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Area2Popup" to="CanvasLayer/Label16" method="_on_area_2_popup_body_entered"]
+[connection signal="body_exited" from="Area2Popup" to="CanvasLayer/Label16" method="_on_area_2_popup_body_exited"]
