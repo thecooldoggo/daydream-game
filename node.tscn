@@ -1,12 +1,63 @@
-[gd_scene load_steps=8 format=4 uid="uid://cs3n70fd4jfqb"]
+[gd_scene load_steps=13 format=4 uid="uid://cs3n70fd4jfqb"]
 
-[ext_resource type="Script" uid="uid://d1xkk8gn2ow74" path="res://player.gd" id="1_112p8"]
-[ext_resource type="Texture2D" uid="uid://dvvvqqh0jja8x" path="res://pixil-layer-Layer 2.png" id="2_112p8"]
+[ext_resource type="Script" path="res://player.gd" id="1_112p8"]
+[ext_resource type="Texture2D" uid="uid://drfnpxqc82njh" path="res://pixil-frame-0.png" id="2_qn3nj"]
 [ext_resource type="Texture2D" uid="uid://81kt76hyoyvd" path="res://images.png" id="3_bss38"]
-[ext_resource type="Texture2D" uid="uid://b47qk3qb30org" path="res://pixil-layer-Layer 3.png" id="3_e2u21"]
+[ext_resource type="Texture2D" uid="uid://vkfnr3837rv2" path="res://pixil-frame-1.png" id="3_l6pdb"]
+[ext_resource type="Texture2D" uid="uid://cvvmx286ikbm6" path="res://pixil-frame-2.png" id="4_r657h"]
+[ext_resource type="Texture2D" uid="uid://d2e2uex8305st" path="res://pixil-frame-3.png" id="5_f0urt"]
+[ext_resource type="Texture2D" uid="uid://4hy8x8wsnswp" path="res://pixil-frame-4.png" id="6_jfkdj"]
+[ext_resource type="Script" uid="uid://ntumxb7atdns" path="res://animated_sprite_2d.gd" id="7_l6pdb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tda05"]
 size = Vector2(101.5, 103.75)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wt6go"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qn3nj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l6pdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r657h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f0urt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jfkdj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qn3nj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qn3nj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qn3nj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qn3nj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qn3nj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qn3nj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qn3nj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_qn3nj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qn3nj"]
 texture = ExtResource("3_bss38")
@@ -422,19 +473,17 @@ offset_right = 1158.0
 offset_bottom = 652.0
 color = Color(0.6996299, 0.8402951, 1, 1)
 
-[node name="Sprite2D2" type="Sprite2D" parent="Player"]
-position = Vector2(-4, 9.999999)
-scale = Vector2(3.6562502, 3.84375)
-texture = ExtResource("2_112p8")
-
-[node name="Sprite2D2" type="Sprite2D" parent="Player/Sprite2D2"]
-position = Vector2(-0.82051086, 0)
-scale = Vector2(0.9999999, 0.9674796)
-texture = ExtResource("3_e2u21")
-
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
 position = Vector2(-11.25, 9.875)
 shape = SubResource("RectangleShape2D_tda05")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+position = Vector2(-4, 9.999999)
+scale = Vector2(3.6562502, 3.84375)
+sprite_frames = SubResource("SpriteFrames_wt6go")
+frame = 10
+frame_progress = 0.41907758
+script = ExtResource("7_l6pdb")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-3, -0.5)
