@@ -3,6 +3,7 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -600.0
 var IS_MOVING = false
+var flower_enter_1 = false
 
 @onready var animated_sprite = $AnimatedSprite2D
 
@@ -12,6 +13,13 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 		IS_MOVING = true
 		animated_sprite.play("JumpAni")
+	
+	if Input.is_action_just_pressed("interact") and flower_enter_1:
+		# player change animaion
+		animated_sprite.play("personWithFlower")
+		# change flower to blooming
+		
+		#
 
 	if Input.is_action_just_pressed("up") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
@@ -37,3 +45,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.play("JumpAni")
 		
 	move_and_slide()
+
+
+func _flower_enter(body: Node2D) -> void:
+	flower_enter_1 = true
