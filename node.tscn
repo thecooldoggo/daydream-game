@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://cs3n70fd4jfqb"]
+[gd_scene load_steps=21 format=4 uid="uid://cs3n70fd4jfqb"]
 
 [ext_resource type="Script" uid="uid://d1xkk8gn2ow74" path="res://player.gd" id="1_112p8"]
 [ext_resource type="Texture2D" uid="uid://drfnpxqc82njh" path="res://pixil-frame-0.png" id="2_qn3nj"]
@@ -7,8 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://cvvmx286ikbm6" path="res://pixil-frame-2.png" id="4_r657h"]
 [ext_resource type="Texture2D" uid="uid://d2e2uex8305st" path="res://pixil-frame-3.png" id="5_f0urt"]
 [ext_resource type="Texture2D" uid="uid://4hy8x8wsnswp" path="res://pixil-frame-4.png" id="6_jfkdj"]
+[ext_resource type="Texture2D" uid="uid://cybnyvcq8f6wk" path="res://walk-frame-0.png" id="7_cmsyx"]
+[ext_resource type="Texture2D" uid="uid://c3837h78x7wk3" path="res://walk-frame-1.png" id="8_feppd"]
 [ext_resource type="Texture2D" uid="uid://bubui3awv0h6m" path="res://industrial.v2.png" id="8_l6pdb"]
+[ext_resource type="Texture2D" uid="uid://ce5h2a3rtgois" path="res://walk-frame-2.png" id="9_aeaoo"]
 [ext_resource type="Texture2D" uid="uid://cfmwmi6bdmdoo" path="res://NewBackground.png" id="9_r657h"]
+[ext_resource type="Texture2D" uid="uid://dms7u4v0tgd2b" path="res://walk-frame-3.png" id="10_sps8e"]
+[ext_resource type="Texture2D" uid="uid://bfnnaee8f0xly" path="res://walk-frame-4.png" id="11_bnlop"]
+[ext_resource type="Texture2D" uid="uid://qvndbxaxcjrt" path="res://walk-frame-5.png" id="12_oaeeq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tda05"]
 size = Vector2(101.5, 103.75)
@@ -33,6 +39,29 @@ animations = [{
 }],
 "loop": true,
 "name": &"idleAnimation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_cmsyx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_feppd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_aeaoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sps8e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_bnlop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_oaeeq")
+}],
+"loop": true,
+"name": &"walkAnimation",
 "speed": 5.0
 }]
 
@@ -1171,7 +1200,8 @@ shape = SubResource("RectangleShape2D_tda05")
 position = Vector2(-4, 9.999999)
 scale = Vector2(3.6562502, 3.84375)
 sprite_frames = SubResource("SpriteFrames_wt6go")
-animation = &"idleAnimation"
+animation = &"walkAnimation"
+frame_progress = 0.37206578
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(-3, -0.5)
